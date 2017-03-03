@@ -27,13 +27,13 @@ RUN mkdir /.ansible
 
 RUN yum install -y openssh openssh-server openssh-clients openssl-libs
 
-RUN systemctl enable sshd
-
-RUN systemctl start sshd
+ENV container docker
 
 RUN chmod -R 777 /usr && chmod -R 777 /etc && chmod -R 777 /var && chmod -R 777 /.ansible
 
 EXPOSE 22
 
 USER ansible
+
+CMD ["/usr/sbin/sshd", "-D"]
 CMD ["/usr/sbin/init"]
