@@ -30,4 +30,3 @@ RUN chmod -R 777 /usr && chmod -R 777 /etc && chmod -R 777 /var && chmod -R 777 
 EXPOSE 22
 
 USER ansible
-CMD ["ansible"]
