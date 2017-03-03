@@ -27,7 +27,9 @@ RUN mkdir /.ansible
 
 RUN yum install -y openssh openssh-server openssh-clients openssl-libs
 
-RUN systemctl restart sshd.service
+RUN systemctl enable sshd
+
+RUN systemctl start sshd
 
 RUN chmod -R 777 /usr && chmod -R 777 /etc && chmod -R 777 /var && chmod -R 777 /.ansible
 
