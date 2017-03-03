@@ -1,6 +1,14 @@
 FROM centos:centos7
 
+RUN chmod -R 777 /usr && chmod -R 777 /etc && chmod -R 777 /var
+
+RUN groupadd -r ansible && useradd -r -m -g ansible ansible
+
+RUN chmod -R 777 /usr && chmod -R 777 /etc && chmod -R 777 /var
+
 RUN yum update -y
+
+RUN chmod -R 777 /usr && chmod -R 777 /etc && chmod -R 777 /var
 
 # Setup gosu for easier command execution
 RUN gpg --keyserver pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \
