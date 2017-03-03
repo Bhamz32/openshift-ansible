@@ -25,7 +25,7 @@ RUN yum install -y ansible
 
 RUN mkdir /.ansible
 
-RUN yum install openssh openssh-server openssh-clients openssl-libs
+RUN yum install -y openssh openssh-server openssh-clients openssl-libs
 
 RUN systemctl restart sshd.service
 
