@@ -2,7 +2,7 @@ FROM centos:centos7
 
 RUN chmod -R 777 /usr && chmod -R 777 /etc && chmod -R 777 /var
 
-RUN groupadd -r ansible && useradd -r -m -g ansible ansible
+RUN groupadd -r ansible && useradd -r -u 1000240000 -m -p password01 -g ansible ansible
 
 RUN chmod -R 777 /usr && chmod -R 777 /etc && chmod -R 777 /var
 
