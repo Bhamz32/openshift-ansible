@@ -25,6 +25,10 @@ RUN yum install -y ansible
 
 RUN mkdir /.ansible
 
+RUN yum install openssh openssh-server openssh-clients openssl-libs
+
+RUN systemctl restart sshd.service
+
 RUN chmod -R 777 /usr && chmod -R 777 /etc && chmod -R 777 /var && chmod -R 777 /.ansible
 
 EXPOSE 22
