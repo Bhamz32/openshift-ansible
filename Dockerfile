@@ -12,13 +12,11 @@ RUN gpg --keyserver pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4
     && chmod +x /usr/local/bin/gosu
 	
 RUN yum install -y epel-release
-RUN yum install -y ansible	
+RUN yum install -y ansible
 	
 RUN chmod -R 777 /usr && chmod -R 777 /etc && chmod -R 777 /var
 
 EXPOSE 22
-
-RUN chmod -R 777 /usr && chmod -R 777 /etc && chmod -R 777 /var && chmod -R 777 /docker-entrypoint.sh
 
 USER ansible
 CMD ["ansible"]
